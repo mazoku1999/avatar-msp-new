@@ -35,7 +35,10 @@ export async function POST() {
       try {
         const resp = await res.json();
         errorMessage =
-          resp?.data?.[0]?.message ?? resp?.message ?? resp?.error ?? errorMessage;
+          resp?.data?.[0]?.message ??
+          resp?.message ??
+          resp?.error ??
+          errorMessage;
       } catch (error) {
         console.error("Failed to parse error response", error);
       }

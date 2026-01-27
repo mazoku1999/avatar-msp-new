@@ -35,16 +35,16 @@ const Button: React.FC<ButtonProps> = ({
   const isLight = theme === "light";
   const variantStyles: Record<string, string> = isLight
     ? {
-      solid: "bg-black text-white hover:bg-black/80",
-      ghost: "bg-black/5 text-slate-900 hover:bg-black/10",
-      outline:
-        "border border-slate-400 text-slate-900 hover:border-slate-600",
-    }
+        solid: "bg-black text-white hover:bg-black/80",
+        ghost: "bg-black/5 text-slate-900 hover:bg-black/10",
+        outline:
+          "border border-slate-400 text-slate-900 hover:border-slate-600",
+      }
     : {
-      solid: "bg-white text-black hover:bg-white/90",
-      ghost: "bg-white/10 text-white hover:bg-white/20",
-      outline: "border border-white/30 text-white hover:border-white/60",
-    };
+        solid: "bg-white text-black hover:bg-white/90",
+        ghost: "bg-white/10 text-white hover:bg-white/20",
+        outline: "border border-white/30 text-white hover:border-white/60",
+      };
 
   const focusRing = isLight
     ? "focus-visible:ring-black/20"
@@ -67,14 +67,16 @@ const InfoCard: React.FC<{
   theme: Theme;
 }> = ({ label, value, theme }) => (
   <div
-    className={`rounded-3xl border px-5 py-4 space-y-1 ${theme === "light"
-      ? "bg-white/90 border-black/10 text-slate-900"
-      : "bg-[#0c0c0c] border-white/10 text-white"
-      }`}
+    className={`rounded-3xl border px-5 py-4 space-y-1 ${
+      theme === "light"
+        ? "bg-white/90 border-black/10 text-slate-900"
+        : "bg-[#0c0c0c] border-white/10 text-white"
+    }`}
   >
     <p
-      className={`text-[11px] uppercase tracking-[0.3em] ${theme === "light" ? "text-slate-500" : "text-white/40"
-        }`}
+      className={`text-[11px] uppercase tracking-[0.3em] ${
+        theme === "light" ? "text-slate-500" : "text-white/40"
+      }`}
     >
       {label}
     </p>
@@ -93,24 +95,12 @@ const LiveAvatarSessionComponent: React.FC<{
     isStreamReady,
     startSession,
     stopSession,
-    connectionQuality,
-    keepAlive,
     attachElement,
   } = useSession();
-  const {
-    isAvatarTalking,
-    isUserTalking,
-    isMuted,
-    isActive,
-    isLoading,
-    start,
-    stop,
-    mute,
-    unmute,
-  } = useVoiceChat();
+  const { isMuted, isActive, isLoading, start, stop, mute, unmute } =
+    useVoiceChat();
 
-  const { interrupt, repeat, startListening, stopListening } =
-    useAvatarActions(mode);
+  const { repeat } = useAvatarActions(mode);
 
   const { sendMessage } = useTextChat(mode);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -135,13 +125,12 @@ const LiveAvatarSessionComponent: React.FC<{
 
   const isLight = theme === "light";
 
-  const surfaceClass = `${isLight ? "bg-white/95 border-black/10 text-slate-900" : "bg-[#0b0b0b] border-white/10 text-white"
-    }`;
+  const surfaceClass = `${
+    isLight
+      ? "bg-white/95 border-black/10 text-slate-900"
+      : "bg-[#0b0b0b] border-white/10 text-white"
+  }`;
   const subtleText = isLight ? "text-slate-500" : "text-white/50";
-  const modeLabel = mode === "FULL" ? "Sesión completa" : "Sesión personalizada";
-  const modePill = isLight
-    ? "bg-black text-white"
-    : "bg-white/15 text-white";
 
   const VoiceChatComponents = (
     <div className="space-y-3">
@@ -196,8 +185,12 @@ const LiveAvatarSessionComponent: React.FC<{
   );
 
   return (
-    <div className={`w-full space-y-5 ${isLight ? "text-slate-900" : "text-white"}`}>
-      <div className={`rounded-3xl border px-6 py-4 flex items-center justify-between ${surfaceClass}`}>
+    <div
+      className={`w-full space-y-5 ${isLight ? "text-slate-900" : "text-white"}`}
+    >
+      <div
+        className={`rounded-3xl border px-6 py-4 flex items-center justify-between ${surfaceClass}`}
+      >
         <div>
           <p className={`text-xs uppercase tracking-[0.3em] ${subtleText}`}>
             Estado actual
@@ -215,8 +208,9 @@ const LiveAvatarSessionComponent: React.FC<{
       </div>
 
       <div
-        className={`rounded-3xl border aspect-video overflow-hidden ${isLight ? "border-black/10 bg-white" : "border-white/10 bg-black"
-          }`}
+        className={`rounded-3xl border aspect-video overflow-hidden ${
+          isLight ? "border-black/10 bg-white" : "border-white/10 bg-black"
+        }`}
       >
         <video
           ref={videoRef}
@@ -227,7 +221,9 @@ const LiveAvatarSessionComponent: React.FC<{
       </div>
 
       {mode === "FULL" && (
-        <div className={`rounded-3xl border px-6 py-5 space-y-4 ${surfaceClass}`}>
+        <div
+          className={`rounded-3xl border px-6 py-5 space-y-4 ${surfaceClass}`}
+        >
           <p className={`text-xs uppercase tracking-[0.3em] ${subtleText}`}>
             Control de voz
           </p>
@@ -245,10 +241,11 @@ const LiveAvatarSessionComponent: React.FC<{
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Escribe un mensaje para el avatar"
-            className={`flex-1 rounded-3xl border px-6 py-3 transition focus:outline-none focus:ring-2 ${isLight
-              ? "border-black/10 bg-white text-slate-900 placeholder:text-slate-400 focus:ring-black/30"
-              : "border-white/10 bg-black text-white placeholder:text-white/40 focus:ring-white/30"
-              }`}
+            className={`flex-1 rounded-3xl border px-6 py-3 transition focus:outline-none focus:ring-2 ${
+              isLight
+                ? "border-black/10 bg-white text-slate-900 placeholder:text-slate-400 focus:ring-black/30"
+                : "border-white/10 bg-black text-white placeholder:text-white/40 focus:ring-white/30"
+            }`}
           />
           <div className="flex gap-3">
             <Button

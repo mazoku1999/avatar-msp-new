@@ -16,5 +16,6 @@ export const CONTEXT_ID = "899627b6-b1e2-4cd7-bfea-4cadb8d60b64";
 export const LANGUAGE = "en";
 
 // CUSTOM MODE Customizations
-export const ELEVENLABS_API_KEY = "sk_96d11a54249af9aac976593fbea93aed8950822c23b56d54";
+export const ELEVENLABS_API_KEY =
+  "sk_96d11a54249af9aac976593fbea93aed8950822c23b56d54";
 export const OPENAI_API_KEY = "5e969747-ee30-11f0-a99e-066a7fa2e369";
