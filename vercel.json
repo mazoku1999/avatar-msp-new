@@ -1,16 +1,8 @@
 {
-    "version": 2,
-    "installCommand": "pnpm install",
-    "builds": [
-        {
-            "src": "apps/demo/next.config.js",
-            "use": "@vercel/next"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "apps/demo/$1"
-        }
-    ]
+  "version": 2,
+  "installCommand": "pnpm install",
+  "buildCommand": "cd apps/demo && pnpm build",
+  "outputDirectory": "apps/demo/.next",
+  "framework": "nextjs",
+  "devCommand": "pnpm --filter demo dev"
 }
