@@ -2,7 +2,7 @@
   "version": 2,
   "installCommand": "pnpm install",
   "buildCommand": "pnpm --filter demo build",
-  "outputDirectory": "apps/demo/.next",
+  "outputDirectory": ".next",
   "framework": "nextjs",
   "devCommand": "pnpm --filter demo dev"
 }
