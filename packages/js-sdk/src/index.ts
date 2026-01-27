@@ -17,7 +17,7 @@ export {
   Language,
   SessionDisconnectReason,
   AgentEventsEnum,
-  AgentEvent,
   CommandEventsEnum,
 } from "./LiveAvatarSession";
+export type { AgentEvent } from "./LiveAvatarSession";
 export { VoiceChatState, VoiceChatEvent } from "./VoiceChat";
