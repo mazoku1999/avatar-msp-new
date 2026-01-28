@@ -1,12 +1,12 @@
 export const API_KEY = "982362db-fc4a-11f0-a99e-066a7fa2e369";
 export const API_URL = "https://api.liveavatar.com";
 //avatar sandbox
-// export const AVATAR_ID = "dd73ea75-1218-4ef3-92ce-606d5f7fbc0a";
-export const AVATAR_ID = "073b60a9-89a8-45aa-8902-c358f64d2852";
+export const AVATAR_ID = "dd73ea75-1218-4ef3-92ce-606d5f7fbc0a";
+// export const AVATAR_ID = "073b60a9-89a8-45aa-8902-c358f64d2852";
 
 // When true, we will call everything in Sandbox mode.
 // Useful for integration and development.
-export const IS_SANDBOX = false;
+export const IS_SANDBOX = true;
 
 // FULL MODE Customizations
 // Wayne's avatar voice and context
