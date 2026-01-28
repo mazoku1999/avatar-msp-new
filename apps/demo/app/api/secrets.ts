@@ -1,4 +1,4 @@
-export const API_KEY = "5e969747-ee30-11f0-a99e-066a7fa2e369";
+export const API_KEY = "982362db-fc4a-11f0-a99e-066a7fa2e369";
 export const API_URL = "https://api.liveavatar.com";
 //avatar sandbox
 // export const AVATAR_ID = "dd73ea75-1218-4ef3-92ce-606d5f7fbc0a";
