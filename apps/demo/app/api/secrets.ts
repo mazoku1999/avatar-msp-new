@@ -10,8 +10,8 @@ export const IS_SANDBOX = true;
 
 // FULL MODE Customizations
 // Wayne's avatar voice and context
-// export const VOICE_ID = "c2527536-6d1f-4412-a643-53a3497dada9";
-export const VOICE_ID = "864a26b8-bfba-4435-9cc5-1dd593de5ca7";
+export const VOICE_ID = "c2527536-6d1f-4412-a643-53a3497dada9";
+// export const VOICE_ID = "864a26b8-bfba-4435-9cc5-1dd593de5ca7";
 export const CONTEXT_ID = "899627b6-b1e2-4cd7-bfea-4cadb8d60b64";
 export const LANGUAGE = "en";
 
